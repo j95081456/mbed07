@@ -91,7 +91,7 @@ void initFXOS8700Q(void) {
 int main() {
   initFXOS8700Q();
   t.start(callback(&queue, &EventQueue::dispatch_forever));
-  btnRecord.fall(queue.event(startRecord));
-  btnFlag.fall(queue.event(flagWrong));
-  btnRecord.rise(queue.event(stopRecord));
+  btnRecord.fall(queue.event(startRecord)); //SW2
+  btnFlag.fall(queue.event(flagWrong));  //SW3
+  btnRecord.rise(queue.event(stopRecord)); //SW2
 }
